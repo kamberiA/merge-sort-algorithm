@@ -57,7 +57,7 @@ export class MergeSort {
                 temp[k++] = arr[right++]
             }
         }
-        
+
         // Since the two arrays length can be uneven, you may have one last element available in either left or right array
 
         while (left <= leftEnd) {
