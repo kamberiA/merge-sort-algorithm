@@ -8,6 +8,7 @@ export class MergeSort {
     }
 
     //  Starts the sorting process, array to be sorted
+
     public sort(arr: number[]): void {
         if (arr !== undefined) {
             this.mergeSort(arr, this.temp, 0, arr.length - 1);
@@ -47,6 +48,8 @@ export class MergeSort {
         let k: number = left;
         let num: number = rightEnd - left + 1;
 
+        // Sorting two closest arrays, the smaller element will be pushed first to the new empty array
+
         while (left <= leftEnd && right <= rightEnd) {
             if (arr[left] <= arr[right]) {
                 temp[k++] = arr[left++];
@@ -54,6 +57,8 @@ export class MergeSort {
                 temp[k++] = arr[right++]
             }
         }
+        
+        // Since the two arrays length can be uneven, you may have one last element available in either left or right array
 
         while (left <= leftEnd) {
             temp[k++] = arr[left++];
